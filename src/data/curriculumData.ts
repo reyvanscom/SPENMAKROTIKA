@@ -18,11 +18,11 @@ export const TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Robot edukasi sedang membantu siswa memilah barang-barang daur ulang berdasarkan kategori bentuk dan warna.',
-      videoTitle: 'Bagaimana Otak Komputer dan Manusia Memecahkan Masalah Antrean Kantin?',
+      videoTitle: 'Pengenalan Computational Thinking (Berpikir Komputasional)',
       videoDuration: '04:15',
-      videoThumbnail: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Video pemantik yang mengamati kerumitan antrean kantin sekolah saat jam istirahat dan bagaimana pola antrean diselesaikan dengan cara cerdas.',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=qYZzPj30l5E',
+      videoThumbnail: 'https://i.ytimg.com/vi/jCb9fpPrxLc/hqdefault.jpg',
+      videoDescription: 'Video pemantik yang menjelaskan 4 pilar berpikir komputasional dalam memecahkan masalah sehari-hari dengan cara yang cerdas dan logis.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=jCb9fpPrxLc',
       realLifeStory: 'Setiap pagi, kantin SMP Negeri 5 Kroya dipadati puluhan siswa yang ingin membeli sarapan dalam waktu 15 menit istirahat. Terkadang antrean menjadi kacau, sebagian siswa kehabisan waktu, sementara penjual kesulitan mencatat pesanan. Jika kamu ditugaskan menjadi konsultan logistik kantin, bagaimana kamu menguraikan masalah ini menjadi bagian-bagian kecil tanpa langsung menyalahkan pihak tertentu?',
       triggerQuestions: [
         'Mengapa membagi masalah besar menjadi bagian-bagian kecil membuat solusi lebih mudah ditemukan?',
@@ -531,11 +531,11 @@ export const TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Grafik data interaktif menampilkan visualisasi data siswa, diagram lingkaran hobi, dan tabel rapi.',
-      videoTitle: 'Bagaimana Toko Buku Online Mengelompokkan Ribuan Judul Buku?',
-      videoDuration: '03:45',
-      videoThumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Mengamati bagaimana ribuan judul buku dikelompokkan berdasarkan kategori fiksi, sains, jenjang kelas, dan bahasa.',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=d_kO9xGv-8Y',
+      videoTitle: 'Inilah Harga Mengejutkan Data Pribadi Kita - Kok Bisa?',
+      videoDuration: '04:10',
+      videoThumbnail: 'https://i.ytimg.com/vi/mSPINwb2HgY/hqdefault.jpg',
+      videoDescription: 'Mengapa data digital begitu berharga dan bagaimana data dikumpulkan, diolah, dan dikelompokkan oleh platform digital modern.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=mSPINwb2HgY',
       realLifeStory: 'Perpustakaan SMPN 5 Kroya baru saja menerima sumbangan 500 buku baru dalam 10 kardus besar tanpa label. Para siswa kesulitan mencari buku yang mereka minati karena buku novel, atlas geografi, dan kamus bahasa Inggris bercampur baur. Bagaimana cara sistematis untuk mengatur buku-buku tersebut agar setiap buku dapat ditemukan dalam waktu kurang dari 30 detik?',
       triggerQuestions: [
         'Kriteria apa saja yang paling efektif digunakan untuk membagi 500 buku ke rak-rak perpustakaan?',
@@ -1785,7 +1785,7 @@ export const TOPICS: Topic[] = [
           { label: 'D', text: 'Jangan dengarkan dia, dengarkan saya saja' }
         ],
         correctAnswer: 'A',
-        explanation: 'Pilihan A menyampaikan opini konstruktif dengan dasar alasan yang logis dan bahasa santun.',
+        explanation: 'Kalimat ini menyampaikan opini konstruktif dengan dasar alasan yang logis dan bahasa santun.',
         competencyLevel: 'Penerapan (MOTS)'
       },
       {
@@ -2836,7 +2836,7 @@ export const TOPICS: Topic[] = [
           { label: 'D', text: 'skor#akhir' }
         ],
         correctAnswer: 'A',
-        explanation: 'Pilihan A menggunakan camelCase valid tanpa spasi atau simbol terlarang.',
+        explanation: 'Format variabel totalNilaiSiswa menggunakan aturan camelCase yang valid tanpa spasi atau karakter terlarang.',
         points: 10
       },
       {
@@ -2896,11 +2896,11 @@ export const TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Gembok digital bercahaya dengan perisai keamanan siber melindungi data identitas dan kunci kriptografi.',
-      videoTitle: 'Bagaimana Hacker Menjebol Kata Sandi Lemah dalam Waktu Kurang dari 1 Detik?',
+      videoTitle: 'Gimana Cara Hacker Ngebajak Komputer? - Kok Bisa?',
       videoDuration: '04:40',
-      videoThumbnail: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Demonstrasi bagaimana kombinasi kata sandi seperti "123456" atau tanggal lahir dibongkar dalam sekejap dengan serangan kamus (dictionary attack).',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=7U-RbOKaZkw',
+      videoThumbnail: 'https://i.ytimg.com/vi/ah-uZS0dyP8/hqdefault.jpg',
+      videoDescription: 'Edukasi keamanan siber: bagaimana peretas mengeksploitasi celah keamanan komputer, kata sandi lemah, dan cara melindungi diri kita.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=ah-uZS0dyP8',
       realLifeStory: 'Suatu hari, akun media sosial seorang siswa kelas 9 di Kroya tiba-tiba mengirimkan pesan pinjaman uang ke seluruh kontaknya. Siswa tersebut tidak bisa login karena kata sandinya telah diganti oleh orang tak dikenal. Setelah diselidiki, ia pernah login di warung internet dan tidak pernah mengganti kata sandinya yang hanya berupa tanggal lahir "10102010". Mengapa kebiasaan kecil seperti ini bisa berujung pada bencana privasi digital?',
       triggerQuestions: [
         'Mengapa menggunakan tanggal lahir dan nama hewan peliharaan sebagai kata sandi sangat berbahaya?',

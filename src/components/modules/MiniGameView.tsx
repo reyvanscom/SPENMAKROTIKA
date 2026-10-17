@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Topic } from '../../types/curriculum';
 import { useTheme } from '../../context/ThemeContext';
 import { getTopicGamePack, BattleBotQuestion, WordScrambleQuestion, PictureGuessQuestion } from '../../data/interactiveGamesData';
+import { RobotFigure } from './RobotFigure';
+import { PictureIllustration } from './PictureIllustration';
 import confetti from 'canvas-confetti';
 import {
   Gamepad2,
@@ -453,71 +455,61 @@ export const MiniGameView: React.FC<MiniGameViewProps> = ({
           {/* ARENA BATTLE CONTAINER */}
           {botQIndex < gamePack.battleBot.length ? (
             <div className="p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl space-y-6">
-              {/* Battle Header Status: Robots & HP Bars */}
-              <div className="grid grid-cols-2 gap-4 sm:gap-8 items-center py-4 px-6 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800">
+              {/* Battle Header Status: Interactive 2D Animated Robots Arena */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-8 items-center py-5 px-4 sm:px-6 rounded-3xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800">
                 {/* Robot Kiri (Player 1 / Tim Biru) */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs font-bold">
-                    <span className="text-sky-600 dark:text-sky-400">
-                      {mode === 'individu' && 'Robot Siswa SPENMAKRO'}
-                      {mode === 'duel' && `Pemain 1 ${duelTurn === 'p1' ? '⚡ (Giliranmu)' : ''}`}
-                      {mode === 'kelompok' && `Tim Biru (${teamScores.biru} Poin) ${teamTurn === 'biru' ? '⚡' : ''}`}
-                    </span>
-                    <span className="font-mono">
-                      {mode === 'individu' && `${playerHp} HP`}
-                      {mode === 'duel' && `${duelP1Hp} HP`}
-                    </span>
-                  </div>
-                  {/* HP Progress Bar */}
-                  <div className="w-full h-3.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden p-0.5">
-                    <div
-                      className="h-full bg-gradient-to-r from-sky-500 to-emerald-400 rounded-full transition-all duration-500"
-                      style={{
-                        width: `${mode === 'individu' ? playerHp : mode === 'duel' ? duelP1Hp : 100}%`
-                      }}
-                    />
-                  </div>
-                  <div className="text-center pt-2">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-sky-100 dark:bg-sky-950/80 border-2 border-sky-400 flex items-center justify-center text-sky-600 relative overflow-hidden">
-                      <Bot className="w-10 h-10 sm:w-12 sm:h-12" />
-                      {botActionEffect === 'laser' && (
-                        <div className="absolute inset-0 bg-sky-400/40 animate-ping" />
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <RobotFigure
+                  color="blue"
+                  name={
+                    mode === 'individu'
+                      ? 'Robot Pelajar'
+                      : mode === 'duel'
+                      ? 'Pemain 1'
+                      : `Tim Biru (${teamScores.biru} Pts)`
+                  }
+                  hp={mode === 'individu' ? playerHp : mode === 'duel' ? duelP1Hp : Math.max(0, 100 - teamScores.merah)}
+                  isShooting={
+                    botActionEffect === 'laser' &&
+                    (mode === 'individu' || (mode === 'duel' && duelTurn === 'p1') || (mode === 'kelompok' && teamTurn === 'biru'))
+                  }
+                  isHit={
+                    (botActionEffect === 'damage' && (mode === 'individu' || (mode === 'duel' && duelTurn === 'p1'))) ||
+                    (botActionEffect === 'laser' && ((mode === 'duel' && duelTurn === 'p2') || (mode === 'kelompok' && teamTurn === 'merah')))
+                  }
+                  isDead={
+                    (mode === 'individu' && playerHp <= 0) ||
+                    (mode === 'duel' && duelP1Hp <= 0) ||
+                    (mode === 'kelompok' && teamScores.merah >= 60 && teamScores.merah > teamScores.biru)
+                  }
+                  isCurrentTurn={mode === 'duel' ? duelTurn === 'p1' : mode === 'kelompok' ? teamTurn === 'biru' : true}
+                />
 
                 {/* Robot Kanan (Enemy / Player 2 / Tim Merah) */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs font-bold">
-                    <span className="text-rose-600 dark:text-rose-400">
-                      {mode === 'individu' && 'Cyber BugBot Lawan'}
-                      {mode === 'duel' && `Pemain 2 ${duelTurn === 'p2' ? '⚡ (Giliranmu)' : ''}`}
-                      {mode === 'kelompok' && `Tim Merah (${teamScores.merah} Poin) ${teamTurn === 'merah' ? '⚡' : ''}`}
-                    </span>
-                    <span className="font-mono">
-                      {mode === 'individu' && `${enemyHp} HP`}
-                      {mode === 'duel' && `${duelP2Hp} HP`}
-                    </span>
-                  </div>
-                  {/* HP Progress Bar */}
-                  <div className="w-full h-3.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden p-0.5">
-                    <div
-                      className="h-full bg-gradient-to-r from-amber-500 to-rose-500 rounded-full transition-all duration-500"
-                      style={{
-                        width: `${mode === 'individu' ? enemyHp : mode === 'duel' ? duelP2Hp : 100}%`
-                      }}
-                    />
-                  </div>
-                  <div className="text-center pt-2">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-rose-100 dark:bg-rose-950/80 border-2 border-rose-400 flex items-center justify-center text-rose-600 relative overflow-hidden">
-                      <Bot className="w-10 h-10 sm:w-12 sm:h-12" />
-                      {botActionEffect === 'damage' && (
-                        <div className="absolute inset-0 bg-rose-500/40 animate-ping" />
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <RobotFigure
+                  color="red"
+                  name={
+                    mode === 'individu'
+                      ? 'Cyber BugBot'
+                      : mode === 'duel'
+                      ? 'Pemain 2'
+                      : `Tim Merah (${teamScores.merah} Pts)`
+                  }
+                  hp={mode === 'individu' ? enemyHp : mode === 'duel' ? duelP2Hp : Math.max(0, 100 - teamScores.biru)}
+                  isShooting={
+                    (botActionEffect === 'damage' && mode === 'individu') ||
+                    (botActionEffect === 'laser' && ((mode === 'duel' && duelTurn === 'p2') || (mode === 'kelompok' && teamTurn === 'merah')))
+                  }
+                  isHit={
+                    (botActionEffect === 'laser' && (mode === 'individu' || (mode === 'duel' && duelTurn === 'p1') || (mode === 'kelompok' && teamTurn === 'biru'))) ||
+                    (botActionEffect === 'damage' && mode === 'duel' && duelTurn === 'p2')
+                  }
+                  isDead={
+                    (mode === 'individu' && enemyHp <= 0) ||
+                    (mode === 'duel' && duelP2Hp <= 0) ||
+                    (mode === 'kelompok' && teamScores.biru >= 60 && teamScores.biru > teamScores.merah)
+                  }
+                  isCurrentTurn={mode === 'duel' ? duelTurn === 'p2' : mode === 'kelompok' ? teamTurn === 'merah' : false}
+                />
               </div>
 
               {/* Soal Kehidupan Sehari-hari */}
@@ -831,13 +823,14 @@ export const MiniGameView: React.FC<MiniGameViewProps> = ({
                   Ketuk Ubin Tertutup untuk Membuka Petunjuk Gambar:
                 </p>
 
-                <div className="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-3xl border-4 border-purple-500/50 bg-slate-100 dark:bg-slate-950 overflow-hidden shadow-lg flex items-center justify-center p-6">
-                  {/* Gambar Ikon Utama di Belakang */}
-                  <div className="text-center space-y-2">
-                    {renderVisualIcon(currentPicQ.iconName)}
-                    <span className="text-xs font-extrabold text-slate-900 dark:text-white uppercase tracking-wider block">
-                      {currentPicQ.visualTag}
-                    </span>
+                <div className="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-3xl border-4 border-purple-500/50 bg-slate-100 dark:bg-slate-950 overflow-hidden shadow-lg flex items-center justify-center p-3">
+                  {/* Ilustrasi Murni 2D Gambar Tanpa Ikon dan Tanpa Teks */}
+                  <div className="w-full h-full flex items-center justify-center">
+                    <PictureIllustration
+                      answerKey={currentPicQ.options[currentPicQ.correctIndex]}
+                      iconName={currentPicQ.iconName}
+                      title={currentPicQ.title}
+                    />
                   </div>
 
                   {/* 4 Ubin Penutup (Bisa dibuka dengan sentuhan di IFP) */}

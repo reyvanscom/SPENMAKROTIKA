@@ -483,11 +483,11 @@ export const COMPREHENSIVE_TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Siswa SMP saling menyemangati secara online dengan pesan positif, menolak komentar jahat dan perundungan siber.',
-      videoTitle: 'Jejak Digitalmu Tidak Pernah Hilang: Bagaimana Postingan 5 Tahun Lalu Menentukan Masa Depan?',
+      videoTitle: 'Etika Bermedia Sosial (Netiquette / Netiket Digital)',
       videoDuration: '04:35',
-      videoThumbnail: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Kisah nyata bagaimana jejak komentar kasar di media sosial mempengaruhi kesempatan beasiswa dan penerimaan sekolah.',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=OttHNjb3w20',
+      videoThumbnail: 'https://i.ytimg.com/vi/uXuYeAXr0wc/hqdefault.jpg',
+      videoDescription: 'Panduan netiket: cara berkomunikasi yang santun, menghindari perundungan siber, dan menjaga jejak digital yang positif.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=uXuYeAXr0wc',
       realLifeStory: 'Di sebuah grup percakapan kelas 8 SMPN 5 Kroya, seorang siswa secara sengaja mengirim foto teman sekelasnya yang sedang menguap lucu lalu menambahkan tulisan mengejek. Beberapa teman tertawa, namun siswa yang fotonya diedit merasa malu, menangis, dan tidak mau masuk sekolah keesokan harinya. Pelaku beralasan "Saya cuma bercanda, tidak ada niat jahat!". Di mana batas antara lelucon dan perundungan di dunia maya?',
       triggerQuestions: [
         'Mengapa orang sering kali merasa lebih berani berbicara kasar di media sosial dibanding saat bertatap muka langsung?',

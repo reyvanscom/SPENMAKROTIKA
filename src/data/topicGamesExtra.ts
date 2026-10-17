@@ -1817,6 +1817,209 @@ export const EXTRA_TOPIC_GAMES: Record<string, TopicGamePack> = {
       }
     ],
     simulationCategories: ['Hak Akses Dokumen Daring', 'Fitur Pemulihan & Riwayat']
+  },
+
+  // ==========================================
+  // KELAS 9 - RUANG PUBLIK VIRTUAL
+  // ==========================================
+  'k9-ruang-publik-virtual': {
+    battleBot: [
+      {
+        id: 1,
+        scenario: 'Siswa kelas 9 menemukan postingan hoaks yang memicu kepanikan di media sosial.',
+        question: 'Tindakan apa yang mencerminkan mindfulness digital sebelum bereaksi terhadap postingan tersebut?',
+        options: [
+          { label: 'A', text: 'Memeriksa kebenaran informasi di portal berita resmi dan tidak ikut membagikannya' },
+          { label: 'B', text: 'Langsung membagikan ke 10 grup WhatsApp keluarga' },
+          { label: 'C', text: 'Mengetik komentar caci maki dengan huruf kapital semua' },
+          { label: 'D', text: 'Membuat akun palsu baru untuk menyebarkan kabar tersebut' }
+        ],
+        correctIndex: 0,
+        damage: 25,
+        explanation: 'Mindfulness digital melatih kita untuk berpikir kritis (Think Before You Post) dan memvalidasi kebenaran fakta.'
+      },
+      {
+        id: 2,
+        scenario: 'Di kolom komentar forum diskusi, ada teman yang berbeda pendapat mengenai hasil presentasi.',
+        question: 'Prinsip toleransi digital yang paling tepat dipraktikkan adalah...',
+        options: [
+          { label: 'A', text: 'Menghargai perbedaan sudut pandang dengan bahasa yang santun dan terbuka untuk berdiskusi' },
+          { label: 'B', text: 'Memaksa teman tersebut harus mengikuti pendapat kita' },
+          { label: 'C', text: 'Melakukan perundungan siber (cyberbullying) bersama anggota kelompok lain' },
+          { label: 'D', text: 'Menyebarkan identitas pribadi teman tersebut tanpa izin' }
+        ],
+        correctIndex: 0,
+        damage: 25,
+        explanation: 'Toleransi digital adalah kesediaan menerima dan menghargai keragaman pendapat serta budaya di dunia maya.'
+      },
+      {
+        id: 3,
+        scenario: 'Kelompok 1 ingin menampilkan simulasi gedung sekolah 3D di mana pengguna seolah-olah masuk sepenuhnya ke dunia maya.',
+        question: 'Teknologi imersif apakah yang digunakan untuk menciptakan pengalaman dunia maya penuh tersebut?',
+        options: [
+          { label: 'A', text: 'Virtual Reality (VR)' },
+          { label: 'B', text: 'Pesan Singkat SMS' },
+          { label: 'C', text: 'Radio FM Analog' },
+          { label: 'D', text: 'Kabel Telepon Rumah' }
+        ],
+        correctIndex: 0,
+        damage: 25,
+        explanation: 'Virtual Reality (VR) membawa pengguna sepenuhnya masuk ke dalam dunia maya 3D melalui headset khusus.'
+      },
+      {
+        id: 4,
+        scenario: 'Saat mengerjakan tugas kelompok di Google Workspace, ada anggota yang salah menghapus paragraf laporan.',
+        question: 'Langkah cerdas apa yang harus dilakukan sesuai etika kolaborasi digital?',
+        options: [
+          { label: 'A', text: 'Menenangkan tim dan memulihkan teks melalui fitur Riwayat Versi (Version History)' },
+          { label: 'B', text: 'Memarahi teman tersebut di grup WhatsApp kelas dengan huruf kapital' },
+          { label: 'C', text: 'Menghapus seluruh file tugas kelompok' },
+          { label: 'D', text: 'Mengundurkan diri dari kelompok' }
+        ],
+        correctIndex: 0,
+        damage: 25,
+        explanation: 'Fitur Version History di platform kolaborasi daring menyimpan rekaman perubahan sehingga dokumen mudah dipulihkan.'
+      },
+      {
+        id: 5,
+        scenario: 'Siswa ingin mengirimkan pesan konfirmasi pengumpulan tugas kepada guru Informatika.',
+        question: 'Etika penulisan pesan digital yang paling sopan dan berkarakter adalah...',
+        options: [
+          { label: 'A', text: 'Menyampaikan salam hormat, menyebutkan identitas nama & kelas, menjelaskan maksud dengan sopan, dan berterima kasih' },
+          { label: 'B', text: 'Mengirim huruf "P" berkali-kali sampai dibalas' },
+          { label: 'C', text: 'Mengirim pesan di jam tidur malam tanpa salam' },
+          { label: 'D', text: 'Menggunakan singkatan gaul yang tidak dimengerti oleh guru' }
+        ],
+        correctIndex: 0,
+        damage: 25,
+        explanation: 'Etika berkirim pesan kepada guru mencakup salam santun, perkenalan identitas, pesan ringkas jelas, dan ucapan terima kasih.'
+      }
+    ],
+    wordScramble: [
+      {
+        id: 1,
+        word: 'METAVERSE',
+        scrambled: 'E S R E V A T E M',
+        clue: 'Dunia simulasi digital bersama tempat orang berinteraksi melalui avatar.',
+        dailyContext: 'Masa depan ruang publik virtual tempat orang bekerja, belanja, dan bermain.'
+      },
+      {
+        id: 2,
+        word: 'TOLERANSI',
+        scrambled: 'I S N A R E L O T',
+        clue: 'Sikap menghargai perbedaan pendapat dan budaya di ruang digital.',
+        dailyContext: 'Kunci menjaga persaudaraan saat berdiskusi di grup kelas SMPN 5 Kroya.'
+      },
+      {
+        id: 3,
+        word: 'KOLABORASI',
+        scrambled: 'I S A R O B A L O K',
+        clue: 'Bekerja sama menyelesaikan tugas secara daring melalui platform digital.',
+        dailyContext: 'Menyusun laporan praktikum bersama teman di Google Docs.'
+      },
+      {
+        id: 4,
+        word: 'ANONIMITAS',
+        scrambled: 'S A T I M I N O N A',
+        clue: 'Karakteristik ruang maya saat pengguna memakai identitas atau nama samaran.',
+        dailyContext: 'Sering disalahgunakan oknum untuk menyebarkan kebencian tanpa rasa tanggung jawab.'
+      },
+      {
+        id: 5,
+        word: 'EMPATI',
+        scrambled: 'I T A P M E',
+        clue: 'Kemampuan memahami dan merasakan perasaan orang lain di media digital.',
+        dailyContext: 'Berpikir sebelum mengetik komentar agar tidak melukai hati teman sekelas.'
+      }
+    ],
+    pictureGuess: [
+      {
+        id: 1,
+        title: 'Virtual Reality (VR)',
+        clue: 'Kacamata headset 3D yang membawa pengguna masuk sepenuhnya ke lingkungan digital.',
+        dailyContext: 'Perangkat teknologi imersif yang dipakai untuk simulasi laboratorium maya.',
+        iconName: 'Tv',
+        visualTag: 'Virtual Reality',
+        options: ['Virtual Reality (VR)', 'Kabel LAN RJ45', 'Kabel USB-C', 'Printer Warna Inkjet'],
+        correctIndex: 0
+      },
+      {
+        id: 2,
+        title: 'Augmented Reality (AR)',
+        clue: 'Kamera ponsel yang memproyeksikan objek 3D interaktif ke atas meja nyata.',
+        dailyContext: 'Teknologi pada game Pokemon Go atau filter animasi media sosial.',
+        iconName: 'SmartphoneNfc',
+        visualTag: 'Augmented Reality',
+        options: ['Augmented Reality (AR)', 'Monitor Tabung Kuno', 'Proyektor Kuno', 'Mesin Tik Manual'],
+        correctIndex: 0
+      },
+      {
+        id: 3,
+        title: 'Platform Kolaborasi Google Workspace',
+        clue: 'Aplikasi pengolah dokumen teks yang diedit bersama secara simultan oleh banyak anggota tim.',
+        dailyContext: 'Tempat siswa SMPN 5 Kroya mengetik naskah laporan tugas kelompok.',
+        iconName: 'FileText',
+        visualTag: 'Google Docs Kolaborasi',
+        options: ['Google Docs', 'Speaker Pasif', 'Kipas Casing CPU', 'Baterai Jam Dinding'],
+        correctIndex: 0
+      },
+      {
+        id: 4,
+        title: 'Ruang Chat & Konferensi Video',
+        clue: 'Aplikasi panggilan tatap muka digital untuk diskusi kelompok jarak jauh.',
+        dailyContext: 'Digunakan saat koordinasi belajar kelompok dari rumah masing-masing.',
+        iconName: 'Laptop',
+        visualTag: 'Konferensi Daring',
+        options: ['Laptop / Komputer', 'Televisi Hitam Putih', 'Walkie Talkie Tua', 'Kawat Tembaga'],
+        correctIndex: 0
+      },
+      {
+        id: 5,
+        title: 'Etika Mindfulness & Anti-Cyberbullying',
+        clue: 'Perisai hijau perlindungan diri dan sikap santun menghormati privasi orang lain.',
+        dailyContext: 'Karakter utama siswa melek teknologi di era digital.',
+        iconName: 'ShieldCheck',
+        visualTag: 'Mindfulness Digital',
+        options: ['Fakta Terverifikasi', 'Kabar Hoaks Palsu', 'Serangan Phishing', 'Bahaya Malware / Virus'],
+        correctIndex: 0
+      }
+    ],
+    visualSimulationCards: [
+      {
+        id: 'rpv-1',
+        title: 'Etika: Bertanya kepada Guru dengan Salam & Format Santun',
+        description: 'Menyapa dengan sopan, menyebutkan nama dan kelas, serta menyampaikan maksud dengan jelas.',
+        iconType: 'CheckCircle2',
+        correctCategory: 'Etika Terpuji',
+        color: 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300'
+      },
+      {
+        id: 'rpv-2',
+        title: 'Pelanggaran: Mengunggah Nomor HP & Foto Pribadi Teman Tanpa Izin',
+        description: 'Menyebarkan data privasi orang lain di media sosial publik dapat memicu kejahatan siber.',
+        iconType: 'AlertTriangle',
+        correctCategory: 'Pelanggaran Etika',
+        color: 'border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300'
+      },
+      {
+        id: 'rpv-3',
+        title: 'Mindfulness: Think Before You Post & Saring Sebelum Sharing',
+        description: 'Memikirkan dampak positif dan memverifikasi kebenaran informasi sebelum menekan tombol kirim.',
+        iconType: 'ShieldCheck',
+        correctCategory: 'Mindfulness Digital',
+        color: 'border-purple-500 bg-purple-50 dark:bg-purple-950/40 text-purple-800 dark:text-purple-300'
+      },
+      {
+        id: 'rpv-4',
+        title: 'Kolaborasi: Membagi Tugas Kelompok Secara Adil di Google Docs',
+        description: 'Setiap anggota tim memiliki tanggung jawab materi dan saling memberikan saran konstruktif.',
+        iconType: 'Users',
+        correctCategory: 'Etika Terpuji',
+        color: 'border-sky-500 bg-sky-50 dark:bg-sky-950/40 text-sky-800 dark:text-sky-300'
+      }
+    ],
+    simulationCategories: ['Etika Terpuji', 'Pelanggaran Etika', 'Mindfulness Digital']
   }
 };
+
 

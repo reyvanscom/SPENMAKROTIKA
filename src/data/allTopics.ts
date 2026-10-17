@@ -3,6 +3,8 @@ import { TOPICS as BASE_TOPICS } from './curriculumData';
 import { ADDITIONAL_TOPICS } from './moreTopics';
 import { COMPREHENSIVE_TOPICS } from './moreCurriculumTopics';
 import { GRADE_FINAL_TOPICS } from './gradeFinalTopics';
+import { RUANG_PUBLIK_VIRTUAL_TOPIC } from './ruangPublikVirtualTopic';
+import { randomizeTopicQuestions } from '../utils/questionRandomizer';
 
 // Additional topics for full curriculum coverage
 const REMAINING_TOPICS: Topic[] = [
@@ -21,11 +23,11 @@ const REMAINING_TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Dua siswa SMP sedang mengetik naskah laporan bersama di laptop dengan kursor warna-warni yang bergerak berdampingan.',
-      videoTitle: 'Bagaimana Reporter Berita Menyusun Naskah Bersama dari Tempat Berbeda?',
-      videoDuration: '03:50',
-      videoThumbnail: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Melihat proses pembuatan dokumen kolaboratif di mana setiap anggota tim mengedit bagian tugasnya secara simultan.',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=s6XqBqI-6fI',
+      videoTitle: 'Tutorial Google Docs - Cara Memulai Menggunakan Google Dokumen',
+      videoDuration: '04:15',
+      videoThumbnail: 'https://i.ytimg.com/vi/4iX8gMugOgw/hqdefault.jpg',
+      videoDescription: 'Melihat proses pembuatan dokumen kolaboratif di mana setiap anggota tim mengedit bagian tugasnya secara simultan di cloud.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=4iX8gMugOgw',
       realLifeStory: 'Regu Pramuka SMPN 5 Kroya sedang membuat proposal perkemahan sabtu-minggu. Anggota regu tinggal di desa yang berbeda-beda. Dulu, mereka harus saling meminjam flashdisk sehingga sering tertukar file mana yang paling baru (proposal_final, proposal_final_banget_revisi2). Sekarang dengan Google Docs, mereka menulis bersama di satu dokumen sambil berdiskusi lewat kolom komentar. Apa keuntungan terbesarnya?',
       triggerQuestions: [
         'Mengapa menggunakan gaya judul (Heading 1, Heading 2) jauh lebih baik dibanding sekadar memperbesar ukuran font secara manual?',
@@ -485,11 +487,11 @@ const REMAINING_TOPICS: Topic[] = [
     ],
     apersepsi: {
       imagePromptDesc: 'Lembar kerja spreadsheet profesional dengan tabel data terstruktur, rumus VLOOKUP aktif, dan grafik penjualan tren.',
-      videoTitle: 'Bagaimana Kasir Supermarket Memindai Barcode dan Otomatis Memanggil Harga Barang?',
-      videoDuration: '04:15',
-      videoThumbnail: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&fit=crop&q=80',
-      videoDescription: 'Menemukan rahasia di balik fungsi lookup: bagaimana kode barang otomatis mencari nama dan harga dari tabel basis data referensi.',
-      defaultVideoUrl: 'https://www.youtube.com/watch?v=k_lGz2P_b2U',
+      videoTitle: 'Belajar Excel dari Nol - Tutorial Rumus Excel Dasar Pemula',
+      videoDuration: '05:20',
+      videoThumbnail: 'https://i.ytimg.com/vi/6WgvzCU3TI8/hqdefault.jpg',
+      videoDescription: 'Menemukan rahasia di balik rumus dan fungsi spreadsheet: bagaimana sel, formula, dan penguncian sel bekerja dengan akurat.',
+      defaultVideoUrl: 'https://www.youtube.com/watch?v=6WgvzCU3TI8',
       realLifeStory: 'Koperasi Siswa SMPN 5 Kroya menjual 50 jenis alat tulis. Setiap ada pembelian, petugas harus menghitung harga setelah diskon 10%. Besaran persentase diskon disimpan di satu sel tertentu ($B$1). Ketika rumus disalin ke bawah tanpa tanda dolar ($), hasilnya menjadi rusak dan bernilai nol di baris kedua. Mengapa tanda dolar ($) pada rumus Excel begitu sakti?',
       triggerQuestions: [
         'Kapan kita wajib menambahkan tanda dolar ($) pada alamat sel dalam rumus Excel?',
@@ -938,14 +940,17 @@ const REMAINING_TOPICS: Topic[] = [
   }
 ];
 
-// Combine all topics into unified curriculum
-export const ALL_TOPICS: Topic[] = [
+// Combine all topics into unified curriculum with randomized answer positions
+const RAW_ALL_TOPICS: Topic[] = [
   ...GRADE_FINAL_TOPICS,
   ...BASE_TOPICS,
   ...ADDITIONAL_TOPICS,
   ...REMAINING_TOPICS,
-  ...COMPREHENSIVE_TOPICS
+  ...COMPREHENSIVE_TOPICS,
+  RUANG_PUBLIK_VIRTUAL_TOPIC
 ];
+
+export const ALL_TOPICS: Topic[] = RAW_ALL_TOPICS.map(randomizeTopicQuestions);
 
 export const ALL_TOPIC_MAP: Record<string, Topic> = ALL_TOPICS.reduce((acc, topic) => {
   acc[topic.id] = topic;

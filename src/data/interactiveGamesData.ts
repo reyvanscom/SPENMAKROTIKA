@@ -1,3 +1,5 @@
+import { randomizeTopicGamePack } from '../utils/questionRandomizer';
+
 /**
  * Database Soal Mini Games & Simulasi Visual IFP
  * Berisi 3 Jenis Mini Game dengan 5 Soal Sehari-hari per Topik:
@@ -480,7 +482,7 @@ export const TOPIC_GAMES_REGISTRY: Record<string, TopicGamePack> = {
 /**
  * Fallback generator so every single topic in Class 7, 8, 9 gets 5 questions per game!
  */
-export function getTopicGamePack(topicId: string, topicTitle: string, grade: number): TopicGamePack {
+function getRawTopicGamePack(topicId: string, topicTitle: string, grade: number): TopicGamePack {
   if (TOPIC_GAMES_REGISTRY[topicId]) {
     return TOPIC_GAMES_REGISTRY[topicId];
   }
@@ -720,4 +722,12 @@ export function getTopicGamePack(topicId: string, topicTitle: string, grade: num
     ],
     simulationCategories: ['Konsep Inti', 'Penerapan Nyata', 'Etika & Keamanan', 'Hindari Kesalahan']
   };
+}
+
+/**
+ * Public accessor that returns topic game packs with randomized answer choices
+ */
+export function getTopicGamePack(topicId: string, topicTitle: string, grade: number): TopicGamePack {
+  const rawPack = getRawTopicGamePack(topicId, topicTitle, grade);
+  return randomizeTopicGamePack(rawPack, topicId);
 }
